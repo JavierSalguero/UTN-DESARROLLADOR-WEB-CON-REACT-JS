@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Contacto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            padding: 70px;
+            width: 25%; /* Establecer el ancho del contenedor principal */
+            display: flex;
+            flex-direction: column; /* Alineación vertical */
+            margin: 0 auto; /* Centrar horizontalmente */
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        input, select {
+            width: 95%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        select {
+            width: 100%;
+        }
+
+        .total-cost {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Solicitar Contacto</h1>
+        <form>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" name="apellido" required>
+
+            <label for="dni">DNI</label>
+            <input type="text" id="dni" name="dni" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" required>
+
+            <label for="tipoSeguro">Tipo de Seguro</label>
+            <select id="tipoSeguro" name="tipoSeguro">
+                <option value="basico">Básico</option>
+                <option value="intermedio">Intermedio</option>
+                <option value="premium">Premium</option>
+            </select>
+
+            <div class="total-cost">
+                Costo del seguro: <span id="costoSeguro">$500</span>
+            </div>
+
+            <button type="submit">Solicitar Contacto</button>
+        </form>
+    </div>
+
+    <script>
+        const tipoSeguro = document.getElementById("tipoSeguro");
+        const costoSeguro = document.getElementById("costoSeguro");
+
+        tipoSeguro.addEventListener("change", () => {
+            switch (tipoSeguro.value) {
+                case "basico":
+                    costoSeguro.textContent = "$500";
+                    break;
+                case "intermedio":
+                    costoSeguro.textContent = "$1000";
+                    break;
+                case "premium":
+                    costoSeguro.textContent = "$1500";
+                    break;
+                default:
+                    costoSeguro.textContent = "";
+            }
+        });
+    </script>
+</body>
+</html>
