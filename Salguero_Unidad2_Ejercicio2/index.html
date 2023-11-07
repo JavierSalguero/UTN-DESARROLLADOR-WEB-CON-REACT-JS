@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mi Calculadora</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <h1>Mi Calculadora</h1>
+  <div class="calculator">
+    <input type="text" id="display" readonly>
+    <div class="buttons">
+      <button class="operator" id="backspace" onclick="backspace()">⌫</button>
+      <button class="operator" id="clear" onclick="clearDisplay()">C</button>
+      <button class="operator" id="sqrt" onclick="calculateSqrt()">√</button>
+      <button class="operator" id="divide" onclick="setOperator('/')">/</button>
+      <button id="7" onclick="appendNumber('7')">7</button>
+      <button id="8" onclick="appendNumber('8')">8</button>
+      <button id="9" onclick="appendNumber('9')">9</button>
+      <button class="operator" id="multiply" onclick="setOperator('*')">*</button>
+      <button id="4" onclick="appendNumber('4')">4</button>
+      <button id="5" onclick="appendNumber('5')">5</button>
+      <button id="6" onclick="appendNumber('6')">6</button>
+      <button class="operator" id="subtract" onclick="setOperator('-')">-</button>
+      <button id="1" onclick="appendNumber('1')">1</button>
+      <button id="2" onclick="appendNumber('2')">2</button>
+      <button id="3" onclick="appendNumber('3')">3</button>
+      <button class="operator" id="add" onclick="setOperator('+')">+</button>
+      <button id="0" onclick="appendNumber('0')">0</button>
+      <button id="decimal" onclick="appendDecimal('.')">.</button>
+      <button id="empty"></button>
+      <button class="operator" id="equals" onclick="calculate()">=</button>
+    </div>
+   </div>
+  </section>
+  <script src="index.js"></script>
+</body>
+</html>
